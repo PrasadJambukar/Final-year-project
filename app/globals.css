@@ -1,0 +1,1072 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 222 33% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 230 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 175 84% 32%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 230 83% 53%;
+    --chart-1: 230 83% 53%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 175 84% 32%;
+    --chart-4: 196 80% 53%;
+    --chart-5: 245 58% 51%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 230 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 175 84% 32%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+    --chart-1: 230 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 175 84% 32%;
+    --chart-4: 196 80% 53%;
+    --chart-5: 245 58% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Blockchain Network Pattern */
+.network-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.network-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233b82f6' stroke-width='0.5' stroke-opacity='0.1'%3E%3Ccircle cx='25' cy='25' r='5'/%3E%3Ccircle cx='75' cy='25' r='5'/%3E%3Ccircle cx='25' cy='75' r='5'/%3E%3Ccircle cx='75' cy='75' r='5'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M25 25 L50 50 L75 25 M25 75 L50 50 L75 75'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Hexagonal Grid Pattern */
+.hexagon-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.hexagon-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233b82f6' stroke-width='0.5' stroke-opacity='0.1'%3E%3Cpath d='M15 10.5l15-8.5 15 8.5v17l-15 8.5-15-8.5z'/%3E%3Cpath d='M45 10.5l15-8.5 15 8.5v17l-15 8.5-15-8.5z' transform='translate(-15, 26)'/%3E%3Cpath d='M-15 10.5l15-8.5 15 8.5v17l-15 8.5-15-8.5z' transform='translate(15, 26)'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Node Connection Pattern */
+.node-connection {
+  position: relative;
+  overflow: hidden;
+}
+
+.node-connection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233b82f6' stroke-width='0.5' stroke-opacity='0.1'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='60' cy='20' r='4'/%3E%3Ccircle cx='20' cy='60' r='4'/%3E%3Ccircle cx='60' cy='60' r='4'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3Cpath d='M20 20L40 40L60 20M20 60L40 40L60 60M20 20L20 60M60 20L60 60'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Distributed Nodes Pattern */
+.distributed-nodes {
+  position: relative;
+  overflow: hidden;
+}
+
+.distributed-nodes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='20' cy='20' r='3' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='80' cy='20' r='3' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='20' cy='80' r='3' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%233b82f6' fill-opacity='0.2'/%3E%3Ccircle cx='35' cy='35' r='2' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='65' cy='35' r='2' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='35' cy='65' r='2' fill='%233b82f6' fill-opacity='0.1'/%3E%3Ccircle cx='65' cy='65' r='2' fill='%233b82f6' fill-opacity='0.1'/%3E%3Cpath d='M20 20L50 50M80 20L50 50M20 80L50 50M80 80L50 50M35 35L50 50M65 35L50 50M35 65L50 50M65 65L50 50' stroke='%233b82f6' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Blockchain Card */
+.blockchain-card {
+  @apply relative overflow-hidden border border-border bg-card text-card-foreground shadow-sm rounded-lg transition-all duration-300;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)/0.95) 100%);
+}
+
+.blockchain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blockchain-card:hover::before {
+  opacity: 1;
+}
+
+/* Blockchain Button */
+.blockchain-button {
+  @apply relative overflow-hidden bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all duration-300;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.9) 100%);
+}
+
+.blockchain-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.blockchain-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blockchain-button:hover::after {
+  opacity: 1;
+}
+
+/* Secondary Blockchain Button */
+.blockchain-button-secondary {
+  @apply relative overflow-hidden bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/90 transition-all duration-300;
+  background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary)/0.9) 100%);
+}
+
+.blockchain-button-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+}
+
+.blockchain-button-secondary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blockchain-button-secondary:hover::after {
+  opacity: 1;
+}
+
+/* Accent Blockchain Button */
+.blockchain-button-accent {
+  @apply relative overflow-hidden bg-accent text-accent-foreground shadow-sm hover:bg-accent/90 transition-all duration-300;
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent)/0.9) 100%);
+}
+
+.blockchain-button-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+.blockchain-button-accent::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blockchain-button-accent:hover::after {
+  opacity: 1;
+}
+
+/* Hexagon Shape */
+.hexagon {
+  position: relative;
+  width: 100px;
+  height: 57.74px; /* width * 0.5774 */
+  background-color: hsl(var(--primary)/0.1);
+  margin: 28.87px 0; /* width * 0.2887 */
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 28.87px solid hsl(var(--primary)/0.1); /* width * 0.2887 */
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 28.87px solid hsl(var(--primary)/0.1); /* width * 0.2887 */
+}
+
+/* Hash Display */
+.hash-display {
+  @apply font-mono text-xs bg-secondary/10 p-2 rounded overflow-x-auto border border-secondary/20;
+}
+
+/* Address Badge */
+.address-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary;
+  background: linear-gradient(90deg, hsl(var(--primary)/0.1) 0%, hsl(var(--secondary)/0.1) 100%);
+  border: 1px solid hsl(var(--primary)/0.2);
+}
+
+/* Glow Effect */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Blockchain Input */
+.blockchain-input {
+  @apply relative border border-input bg-background shadow-sm rounded-md transition-all duration-300;
+}
+
+.blockchain-input:focus-within {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Node Element */
+.node-element {
+  @apply relative rounded-full flex items-center justify-center;
+  background: radial-gradient(circle, hsl(var(--primary)/0.2) 0%, hsl(var(--primary)/0.1) 70%);
+  border: 1px solid hsl(var(--primary)/0.3);
+  box-shadow: 0 0 15px hsl(var(--primary)/0.1);
+}
+
+/* Connection Line */
+.connection-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)/0.5), hsl(var(--secondary)/0.5));
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Data Flow Animation */
+@keyframes dataFlow {
+  0% {
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.5);
+  }
+}
+
+.data-flow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary));
+  animation: dataFlow 3s infinite linear;
+}
+
+/* Block Chain Animation */
+@keyframes blockChain {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.block-chain-item {
+  animation: blockChain 3s infinite ease-in-out;
+}
+
+.block-chain-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.block-chain-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.block-chain-item:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Gradient Mesh Background */
+.gradient-mesh {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-mesh::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, hsl(var(--primary)/0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, hsl(var(--secondary)/0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(var(--accent)/0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, hsl(var(--chart-4)/0.1) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Transaction Line */
+.transaction-line {
+  position: relative;
+  padding-left: 20px;
+}
+
+.transaction-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, hsl(var(--primary)), transparent);
+}
+
+/* Blockchain Progress */
+.blockchain-progress {
+  @apply h-2 rounded-full overflow-hidden bg-secondary/20 relative;
+}
+
+.blockchain-progress-bar {
+  @apply h-full rounded-full;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  transition: width 0.5s ease;
+}
+
+/* Modular Component */
+.modular-component {
+  @apply relative border border-border rounded-lg p-4 bg-card;
+  transition: all 0.3s ease;
+}
+
+.modular-component::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsl(var(--primary)/0.05) 0%, transparent 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modular-component:hover::before {
+  opacity: 1;
+}
+
+/* Connector */
+.connector {
+  @apply absolute bg-primary/30;
+  transition: all 0.3s ease;
+}
+
+.connector-horizontal {
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.connector-vertical {
+  width: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Blockchain Tabs */
+.blockchain-tabs {
+  @apply flex space-x-1 rounded-lg bg-muted p-1;
+  background: linear-gradient(90deg, hsl(var(--muted)/0.5) 0%, hsl(var(--muted)/0.8) 100%);
+}
+
+.blockchain-tab {
+  @apply px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200;
+}
+
+.blockchain-tab[data-state="active"] {
+  @apply bg-background text-foreground shadow-sm;
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background)/0.95) 100%);
+}
+
+.blockchain-tab[data-state="inactive"] {
+  @apply text-muted-foreground hover:text-foreground;
+}
+
+/* Blockchain Tooltip */
+.blockchain-tooltip {
+  @apply px-3 py-1.5 text-xs rounded shadow-lg border border-border;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)/0.95) 100%);
+  backdrop-filter: blur(8px);
+}
+
+/* Blockchain Badge */
+.blockchain-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  background: linear-gradient(90deg, hsl(var(--primary)/0.1) 0%, hsl(var(--secondary)/0.1) 100%);
+  border: 1px solid hsl(var(--primary)/0.2);
+}
+
+/* Blockchain Separator */
+.blockchain-separator {
+  @apply shrink-0 bg-border h-[1px] w-full;
+  background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+}
+
+/* Blockchain Alert */
+.blockchain-alert {
+  @apply relative w-full rounded-lg border p-4;
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background)/0.95) 100%);
+}
+
+.blockchain-alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Blockchain Dialog */
+.blockchain-dialog {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+  backdrop-filter: blur(4px);
+}
+
+.blockchain-dialog-content {
+  @apply relative rounded-lg border bg-card p-6 shadow-lg;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)/0.95) 100%);
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow: auto;
+}
+
+/* Blockchain Toast */
+.blockchain-toast {
+  @apply relative rounded-lg border bg-card p-4 shadow-lg;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)/0.95) 100%);
+  backdrop-filter: blur(8px);
+}
+
+.blockchain-toast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Blockchain Loader */
+.blockchain-loader {
+  @apply relative inline-flex;
+}
+
+.blockchain-loader-circle {
+  @apply absolute rounded-full;
+  background-color: hsl(var(--primary));
+  animation: blockChain 1.5s infinite ease-in-out;
+}
+
+.blockchain-loader-circle:nth-child(1) {
+  width: 8px;
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.blockchain-loader-circle:nth-child(2) {
+  width: 8px;
+  height: 8px;
+  animation-delay: 0.2s;
+}
+
+.blockchain-loader-circle:nth-child(3) {
+  width: 8px;
+  height: 8px;
+  animation-delay: 0.4s;
+}
+
+/* Data Propagation Animation */
+@keyframes dataPropagation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.data-propagation {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid hsl(var(--primary));
+  animation: dataPropagation 2s infinite ease-out;
+}
+
+/* Blockchain Network Visualization */
+.network-visualization {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.network-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary));
+  box-shadow: 0 0 10px hsl(var(--primary)/0.5);
+  transition: all 0.3s ease;
+}
+
+.network-node:hover {
+  transform: scale(1.5);
+}
+
+.network-line {
+  position: absolute;
+  height: 1px;
+  background-color: hsl(var(--primary)/0.3);
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* Blockchain Verification Badge */
+.verification-badge {
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+  background: linear-gradient(90deg, hsl(var(--primary)/0.1) 0%, hsl(var(--accent)/0.1) 100%);
+  border: 1px solid hsl(var(--primary)/0.2);
+}
+
+/* Blockchain Verification Check */
+.verification-check {
+  @apply text-primary;
+  filter: drop-shadow(0 0 2px hsl(var(--primary)/0.5));
+}
+
+/* Blockchain Card Hover Effect */
+.blockchain-card-hover {
+  transition: all 0.3s ease;
+}
+
+.blockchain-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Blockchain Gradient Text */
+.blockchain-gradient-text {
+  @apply font-bold;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Blockchain Gradient Border */
+.blockchain-gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 1px;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+}
+
+.blockchain-gradient-border-inner {
+  @apply bg-card rounded-[calc(0.5rem-1px)] p-4;
+  height: 100%;
+}
+
+/* Blockchain Animated Background */
+.blockchain-animated-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.blockchain-animated-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: 
+    radial-gradient(circle at 20% 20%, hsl(var(--primary)/0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, hsl(var(--secondary)/0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, hsl(var(--accent)/0.1) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, hsl(var(--chart-4)/0.1) 0%, transparent 40%);
+  z-index: -1;
+  animation: rotateBg 20s infinite linear;
+}
+
+@keyframes rotateBg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Blockchain Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.blockchain-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.blockchain-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Blockchain Pulse Effect */
+@keyframes blockchainPulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--primary)/0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsl(var(--primary)/0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary)/0);
+  }
+}
+
+.blockchain-pulse {
+  animation: blockchainPulse 2s infinite;
+}
+
+/* Blockchain Floating Elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.blockchain-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.blockchain-float:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.blockchain-float:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.blockchain-float:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Blockchain Nodes Connection Animation */
+@keyframes connectNodes {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 100;
+  }
+  50% {
+    opacity: 1;
+    stroke-dashoffset: 50;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+.connect-nodes {
+  stroke-dasharray: 100;
+  animation: connectNodes 3s infinite linear;
+}
+
+/* Blockchain Data Transfer Animation */
+@keyframes dataTransfer {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scale(1);
+    opacity: 0;
+  }
+}
+
+.data-transfer {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary));
+  animation: dataTransfer 2s infinite linear;
+}
+
+/* Blockchain Verification Animation */
+@keyframes verify {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.verify-animation {
+  animation: verify 0.5s ease-out forwards;
+}
+
+/* Blockchain Consensus Animation */
+@keyframes consensus {
+  0% {
+    transform: scale(1);
+    background-color: hsl(var(--muted)/0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: hsl(var(--primary)/0.5);
+  }
+  100% {
+    transform: scale(1);
+    background-color: hsl(var(--accent)/0.5);
+  }
+}
+
+.consensus-animation {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(var(--muted)/0.5);
+  animation: consensus 2s infinite;
+}
+
+/* Blockchain Distributed Layout */
+.distributed-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Blockchain Modular Component */
+.blockchain-module {
+  @apply relative border border-border rounded-lg p-4 bg-card;
+  transition: all 0.3s ease;
+}
+
+.blockchain-module::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blockchain-module:hover::before {
+  opacity: 1;
+}
+
+/* Blockchain Connection Lines */
+.blockchain-connection {
+  position: relative;
+}
+
+.blockchain-connection::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  width: 1rem;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)/0.5), transparent);
+}
+
+/* Blockchain Peer Animation */
+@keyframes peerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.peer-animation {
+  animation: peerPulse 2s infinite ease-in-out;
+}
+
+/* Blockchain Transaction Flow */
+.transaction-flow {
+  position: relative;
+}
+
+.transaction-flow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsl(var(--primary)/0.1) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Blockchain Verification Check */
+.blockchain-check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary)/0.2);
+  position: relative;
+}
+
+.blockchain-check::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid hsl(var(--primary));
+  border-bottom: 2px solid hsl(var(--primary));
+  transform: translate(-50%, -60%) rotate(-45deg);
+}
+
+/* Blockchain Hash Display */
+.blockchain-hash {
+  @apply font-mono text-xs bg-secondary/10 p-2 rounded overflow-x-auto border border-secondary/20;
+  position: relative;
+}
+
+.blockchain-hash::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsl(var(--primary)/0.05) 50%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
